@@ -12,7 +12,6 @@ export default defineConfig([
       js.configs.recommended,
       reactHooks.configs["recommended-latest"],
       reactRefresh.configs.vite,
-      "react-app",
     ],
     languageOptions: {
       ecmaVersion: 2020,
