@@ -1,9 +1,9 @@
-import * as Sentry from "@sentry/react";
+import BodyLayout from "./layouts/BodyLayout";
 
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <BodyLayout />
     </>
   );
 }
