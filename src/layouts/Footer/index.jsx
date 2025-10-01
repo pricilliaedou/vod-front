@@ -1,4 +1,9 @@
 import { themeColors } from "../../styles/themeColors";
+import {
+  LinkedinIcon,
+  GithubIcon,
+  FacebookIcon,
+} from "../../common/assets/icons";
 import MENESR from "../../assets/logos/MENESR.png";
 import secretariat from "../../assets/logos/secretariat-d-etat-charge-de-l-enfance.png";
 import UE_co_founded from "../../assets/logos/eu_co_funded_en.png";
@@ -11,7 +16,7 @@ const Footer = () => {
       className="footer"
       style={{ backgroundColor: themeColors.violet.main }}
     >
-      <div className="footer-logo">
+      <div className="footer-logo ">
         <div className="footer-logo-left">
           <div className="footer-logo-img">
             <a
@@ -63,31 +68,57 @@ const Footer = () => {
         </div>
       </div>
 
-      <div>
-        <p>Découvrir l'asscoiation </p>
+      <div style={{ backgroundColor: themeColors.orange.light }}>
+        <p>Suivez-nous </p>
+        <div className="footer-social-media">
+          <a
+            href="https://www.linkedin.com/in/pricillia-lydiane-edou-edou"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedinIcon />
+          </a>
+          <a
+            href="https://github.com/pricilliaedou"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubIcon />
+          </a>
+          <a
+            href="https://www.google.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FacebookIcon />
+          </a>
+        </div>
       </div>
-      <div>
+      <div
+        style={{ backgroundColor: themeColors.yellow.light }}
+        className="footer-contact"
+      >
         <p
           className="footer-contact"
-          style={{ backgroundColor: themeColors.violet.light }}
+          style={{ backgroundColor: themeColors.violet.light, width: "70%" }}
         >
           Nous contacter
         </p>
         <p
           className="footer-contact"
-          style={{ backgroundColor: themeColors.yellow.main }}
+          style={{ backgroundColor: themeColors.yellow.main, width: "70%" }}
         >
           Demander une intervention
         </p>
         <p
           className="footer-contact"
-          style={{ backgroundColor: themeColors.violet.light }}
+          style={{ backgroundColor: themeColors.violet.light, width: "70%" }}
         >
           Espace presse
         </p>
         <p
           className="footer-contact"
-          style={{ backgroundColor: themeColors.yellow.main }}
+          style={{ backgroundColor: themeColors.yellow.main, width: "70%" }}
         >
           Recevoir la newsletter
         </p>
