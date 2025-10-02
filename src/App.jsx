@@ -1,9 +1,9 @@
-import BodyLayout from "./layouts/BodyLayout";
+import MainLayout from "./layouts/MainLayout";
 
 function App() {
   return (
     <>
-      <BodyLayout />
+      <MainLayout />
     </>
   );
 }

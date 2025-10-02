@@ -9,6 +9,7 @@ const Header = () => {
         <img src={logo} alt="logo" />
       </div>
       <SearchBar />
+      <button>S'identifier</button>
     </div>
   );
 };
