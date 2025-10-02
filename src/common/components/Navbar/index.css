@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: -35px;
+  left: 50px;
+  gap: 10px;
+  z-index: -1;
+}
+
+.navbar a {
+  padding: 10px 10px 20px 10px;
+  border-radius: 10px;
+}

@@ -1,12 +1,17 @@
 .mainLayout {
+  width: 90%;
+  margin: 100px auto;
+  position: relative;
+  z-index: 10;
+}
+.mainLayout-items {
   display: flex;
   flex-direction: row;
-  width: 90%;
   background-color: white;
-  margin: 100px auto;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   gap: 20px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
 .mainLayout-left {
@@ -14,7 +19,6 @@
 }
 .mainLayout-right {
   width: 80%;
-  background-color: blue;
 }
 .mainLayout-right img {
   object-fit: contain;

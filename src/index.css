@@ -1,4 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --pulse-color: transparent;
+  --pulse-size: 0.5em;
+  --pulse-duration: 1s;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   max-width: 1200px;
@@ -10,4 +21,29 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Animation Pulse */
+
+.pulse {
+  position: relative;
+}
+
+.pulse:hover,
+.pulse:focus,
+.pulse:focus-visible {
+  animation: pulse var(--pulse-duration) ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 var(--pulse-color);
+  }
+  100% {
+    box-shadow: 0 0 0 var(--pulse-size) var(--pulse-color);
+  }
 }
