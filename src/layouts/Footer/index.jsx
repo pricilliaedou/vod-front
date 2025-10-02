@@ -2,7 +2,7 @@ import { themeColors } from "../../styles/themeColors";
 import {
   LinkedinIcon,
   GithubIcon,
-  FacebookIcon,
+  PortfolioIcon,
 } from "../../common/assets/icons";
 import MENESR from "../../assets/logos/MENESR.png";
 import secretariat from "../../assets/logos/secretariat-d-etat-charge-de-l-enfance.png";
@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div style={{ backgroundColor: themeColors.orange.light }}>
+      <div>
         <p>Suivez-nous </p>
         <div className="footer-social-media">
           <a
@@ -86,39 +86,36 @@ const Footer = () => {
             <GithubIcon />
           </a>
           <a
-            href="https://www.google.fr"
+            href="https://pricilliae-portfolio.netlify.app"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FacebookIcon />
+            <PortfolioIcon />
           </a>
         </div>
       </div>
-      <div
-        style={{ backgroundColor: themeColors.yellow.light }}
-        className="footer-contact"
-      >
+      <div>
         <p
           className="footer-contact"
-          style={{ backgroundColor: themeColors.violet.light, width: "70%" }}
+          style={{ backgroundColor: themeColors.violet.light }}
         >
           Nous contacter
         </p>
         <p
           className="footer-contact"
-          style={{ backgroundColor: themeColors.yellow.main, width: "70%" }}
+          style={{ backgroundColor: themeColors.yellow.main }}
         >
           Demander une intervention
         </p>
         <p
           className="footer-contact"
-          style={{ backgroundColor: themeColors.violet.light, width: "70%" }}
+          style={{ backgroundColor: themeColors.violet.light }}
         >
           Espace presse
         </p>
         <p
           className="footer-contact"
-          style={{ backgroundColor: themeColors.yellow.main, width: "70%" }}
+          style={{ backgroundColor: themeColors.yellow.main }}
         >
           Recevoir la newsletter
         </p>

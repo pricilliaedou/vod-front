@@ -50,7 +50,8 @@
 .footer-contact {
   padding: 10px;
   border-radius: 8px;
-  margin: 5px 0;
+  margin: 5px;
+  width: 80%;
 }
 
 .footer-contact:hover {
@@ -92,9 +93,7 @@
     gap: 12px;
   }
   .footer-contact {
-    width: 50%;
-    margin: 0 auto;
-    gap: 10px;
+    width: 40%;
   }
 
   @media (max-width: 425px) {
@@ -102,7 +101,6 @@
       width: 140px;
     }
     .footer-contact {
-      font-size: 0.8rem;
       width: 90%;
     }
   }
