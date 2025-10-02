@@ -4,11 +4,11 @@ import AgeGroup from "../../common/components/AgeGroup";
 import impactRS from "../../assets/images/impact-rs.png";
 import "./index.css";
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, activeTab = null }) => {
   return (
     <BodyLayout>
       <div className="mainLayout">
-        <Navbar />
+        <Navbar activeTab={activeTab} />
         <div className="mainLayout-items">
           <div className="mainLayout-left">
             <AgeGroup />

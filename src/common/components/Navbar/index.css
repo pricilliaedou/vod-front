@@ -11,4 +11,16 @@
 .navbar a {
   padding: 10px 10px 20px 10px;
   border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar a.active {
+  transform: translateY(-9px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.navbar a:not(.active) {
+  opacity: 0.8;
 }
