@@ -100,6 +100,34 @@ export const PortfolioIcon = ({ color = "#000000", size = 35, ...props }) => {
     </svg>
   );
 };
+
+export const BarHomeIcon = () => {
+  return (
+    <svg
+      width="142"
+      height="486"
+      viewBox="0 0 142 486"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="55.2334"
+        y="19.2001"
+        width="32.4759"
+        height="445.2"
+        fill="#262626"
+      />
+      <ellipse cx="70.9301" cy="472.8" rx="70.9056" ry="13.2" fill="#262626" />
+      <rect
+        x="55.2334"
+        width="32.4759"
+        height="40.8"
+        rx="16.2379"
+        fill="#262626"
+      />
+    </svg>
+  );
+};
 // export const iconNames = ["linkedin", "facebook", "github"];
 
 // export const getIcon = (name, props) => {

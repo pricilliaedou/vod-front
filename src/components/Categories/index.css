@@ -1,0 +1,85 @@
+.categories {
+  --diamètre: 24em;
+  --R: calc(var(--diamètre) / 2);
+  --size: 8.5em;
+  --rayon: calc(var(--R) - var(--size) / 2);
+  position: relative;
+  display: block;
+  width: var(--diamètre);
+  height: var(--diamètre);
+  border-radius: 50%;
+  margin: 0 auto;
+  background-color: red;
+}
+
+.categories a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--size);
+  height: var(--size);
+  display: block;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 10px 30px rgba(22, 28, 45, 0.05) inset;
+  box-sizing: border-box;
+}
+
+.categories a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.categories a .inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  opacity: 0.82;
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.categories a:hover .inner {
+  transform: scale(1.05);
+  opacity: 1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.categories .categories-item1 {
+  transform: rotate(0deg) translate(12em) rotate(0deg);
+}
+.categories .categories-item2 {
+  transform: rotate(45deg) translate(12em) rotate(-45deg);
+}
+.categories .categories-item3 {
+  transform: rotate(90deg) translate(12em) rotate(-90deg);
+}
+.categories .categories-item4 {
+  transform: rotate(135deg) translate(12em) rotate(-135deg);
+}
+.categories .categories-item5 {
+  transform: rotate(180deg) translate(12em) rotate(-180deg);
+}
+.categories .categories-item6 {
+  transform: rotate(225deg) translate(12em) rotate(-225deg);
+}
+.categories .categories-item7 {
+  transform: rotate(270deg) translate(12em) rotate(-270deg);
+}
+.categories .categories-item8 {
+  transform: rotate(315deg) translate(12em) rotate(-315deg);
+}
+
+.categories .categories-center {
+  /* top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%); */
+  z-index: 2;
+  /* width: 8.5em;
+  height: 8.5em; */
+}

@@ -1,0 +1,13 @@
+.button {
+  border-radius: 10px;
+  border: none;
+  padding: 10px 20px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 0.2s;
+  transition-delay: 0.1s;
+}

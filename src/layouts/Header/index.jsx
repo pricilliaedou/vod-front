@@ -1,5 +1,6 @@
 import logo from "../../assets/logos/logo.png";
 import SearchBar from "../../components/SearchBar";
+import Button from "../../common/components/Button";
 import "./index.css";
 
 const Header = () => {
@@ -9,7 +10,7 @@ const Header = () => {
         <img src={logo} alt="logo" />
       </div>
       <SearchBar />
-      <button>S'identifier</button>
+      <Button className="button-header">S'identifier</Button>
     </div>
   );
 };
