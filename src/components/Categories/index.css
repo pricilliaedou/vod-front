@@ -1,15 +1,18 @@
 .categories {
-  --diamètre: 28em;
+  --diamètre: clamp(60vmin, 68vmin, 90vmin);
+  --sizeX: calc(var(--diamètre) * 0.27);
+  --sizeY: calc(var(--diamètre) * 0.21);
+  --centerSize: calc(var(--diamètre) * 0.33);
   --R: calc(var(--diamètre) / 2);
-  --sizeX: 7.5em;
-  --sizeY: 5.6em;
-  --centerSize: 8.5em;
   --rayon: calc(var(--R) - max(var(--sizeX), var(--sizeY)) / 2);
   position: relative;
   display: block;
   width: var(--diamètre);
   height: var(--diamètre);
+  aspect-ratio: 1 / 1;
   margin: 0 auto;
+  aspect-ratio: 1 / 1;
+  touch-action: manipulation; /*reactivité tactile*/
 }
 
 .categories a {
@@ -20,65 +23,73 @@
   height: var(--sizeY);
   display: block;
   transform: translate(-50%, -50%);
-  box-shadow: 0 10px 30px rgba(22, 28, 45, 0.05) inset;
   box-sizing: border-box;
+  border-radius: 20px;
 }
 
 .categories a img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 20px;
+  display: block;
 }
 
 .categories a .inner {
   width: 100%;
   height: 100%;
-  border-radius: 12px;
+  border-radius: 20px;
   display: grid;
   place-items: center;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   opacity: 0.82;
   transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  outline: none;
 }
 
 .categories a:hover .inner {
   transform: scale(1.05);
   opacity: 1;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
   cursor: pointer;
 }
 
-.categories .categories-item1 {
+.categories a:focus-visible .inner {
+  outline: 3px solid #5b9cff;
+  outline-offset: 3px;
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.categories .categories-cerveau {
   transform: translate(-50%, -50%) rotate(0deg) translate(var(--rayon))
     rotate(0deg);
 }
-.categories .categories-item2 {
+.categories .categories-glossaire {
   transform: translate(-50%, -50%) rotate(40deg) translate(var(--rayon))
     rotate(-40deg);
 }
-.categories .categories-item3 {
+.categories .categories-cyberharcelement {
   transform: translate(-50%, -50%) rotate(90deg) translate(var(--rayon))
     rotate(-90deg);
 }
-.categories .categories-item4 {
+.categories .categories-solitude {
   transform: translate(-50%, -50%) rotate(140deg) translate(var(--rayon))
     rotate(-140deg);
 }
-.categories .categories-item5 {
+.categories .categories-sinformer {
   transform: translate(-50%, -50%) rotate(180deg) translate(var(--rayon))
     rotate(-180deg);
 }
-.categories .categories-item6 {
+.categories .categories-sommeil {
   transform: translate(-50%, -50%) rotate(220deg) translate(var(--rayon))
     rotate(-220deg);
 }
-.categories .categories-item7 {
+.categories .categories-RS {
   transform: translate(-50%, -50%) rotate(270deg) translate(var(--rayon))
     rotate(-270deg);
 }
-.categories .categories-item8 {
+.categories .categories-jeuxVideos {
   transform: translate(-50%, -50%) rotate(320deg) translate(var(--rayon))
     rotate(-320deg);
 }
@@ -94,4 +105,19 @@
 .categories .categories-center img,
 .categories .categories-center .inner {
   border-radius: 50%;
+}
+
+@media (hover: none) {
+  .categories a:active .inner {
+    transform: scale(0.98);
+    opacity: 1;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Réduction des animations si l’utilisateur le demande */
+@media (prefers-reduced-motion: reduce) {
+  .categories a .inner {
+    transition: none;
+  }
 }

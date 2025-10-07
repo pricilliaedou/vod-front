@@ -1,34 +1,45 @@
-import cyberharcelement from "../../assets/images/cyberharcelement.webp";
+import {
+  Sommeil,
+  Cerveau,
+  Sinformer,
+  Solitude,
+  Glossaire,
+  Prevention,
+  JeuxVideos,
+  ReseauxSociaux,
+  Cyberharcelement,
+} from "../../common/assets/pictures";
+
 import "./index.css";
 const Categories = () => {
   return (
     <div className="categories">
-      <a href="#" className="categories-item1">
-        <img className="inner" src={cyberharcelement} alt="" />
+      <a href="#" className="categories-cerveau">
+        <Cerveau className="inner" />
       </a>
-      <a href="#" className="categories-item2">
-        <img className="inner" src={cyberharcelement} alt="" />
+      <a href="#" className="categories-glossaire">
+        <Glossaire className="inner" />
       </a>
-      <a href="#" className="categories-item3">
-        <img className="inner" src={cyberharcelement} alt="" />
+      <a href="#" className="categories-cyberharcelement">
+        <Cyberharcelement className="inner" />
       </a>
-      <a href="#" className="categories-item4">
-        <img className="inner" src={cyberharcelement} alt="" />
+      <a href="#" className="categories-solitude">
+        <Solitude className="inner" />
       </a>
-      <a href="#" className="categories-item5">
-        <img className="inner" src={cyberharcelement} alt="" />
+      <a href="#" className="categories-sinformer">
+        <Sinformer className="inner" />
       </a>
-      <a href="#" className="categories-item6">
-        <img className="inner" src={cyberharcelement} alt="" />
+      <a href="#" className="categories-sommeil">
+        <Sommeil className="inner" />
       </a>
-      <a href="#" className="categories-item7">
-        <img className="inner" src={cyberharcelement} alt="" />
+      <a href="#" className="categories-RS">
+        <ReseauxSociaux className="inner" />
       </a>
-      <a href="#" className="categories-item8">
-        <img className="inner" src={cyberharcelement} alt="" />
+      <a href="#" className="categories-jeuxVideos">
+        <JeuxVideos className="inner" />
       </a>
       <a href="#" className="categories-center">
-        <img className="inner" src={cyberharcelement} alt="" />
+        <Prevention className="inner" />
       </a>
     </div>
   );

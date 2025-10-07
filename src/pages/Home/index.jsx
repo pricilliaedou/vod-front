@@ -1,5 +1,5 @@
 import BodyLayout from "../../layouts/BodyLayout";
-import Categories from "../Categories";
+import Categories from "../../components/Categories";
 
 import imgHome from "../../assets/images/img-home.png";
 
