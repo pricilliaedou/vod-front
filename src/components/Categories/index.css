@@ -1,13 +1,14 @@
 .categories {
-  --diamètre: 32em;
+  --diamètre: 28em;
   --R: calc(var(--diamètre) / 2);
-  --size: 8.5em;
-  --rayon: calc(var(--R) - var(--size) / 2);
+  --sizeX: 7.5em;
+  --sizeY: 5.6em;
+  --centerSize: 8.5em;
+  --rayon: calc(var(--R) - max(var(--sizeX), var(--sizeY)) / 2);
   position: relative;
   display: block;
   width: var(--diamètre);
   height: var(--diamètre);
-  border-radius: 50%;
   margin: 0 auto;
 }
 
@@ -15,8 +16,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: var(--size);
-  height: var(--size);
+  width: var(--sizeX);
+  height: var(--sizeY);
   display: block;
   transform: translate(-50%, -50%);
   box-shadow: 0 10px 30px rgba(22, 28, 45, 0.05) inset;
@@ -27,13 +28,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 12px;
 }
 
 .categories a .inner {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 12px;
   display: grid;
   place-items: center;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -46,6 +47,7 @@
   transform: scale(1.05);
   opacity: 1;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
 }
 
 .categories .categories-item1 {
@@ -53,34 +55,43 @@
     rotate(0deg);
 }
 .categories .categories-item2 {
-  transform: translate(-50%, -50%) rotate(45deg) translate(var(--rayon))
-    rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(40deg) translate(var(--rayon))
+    rotate(-40deg);
 }
 .categories .categories-item3 {
   transform: translate(-50%, -50%) rotate(90deg) translate(var(--rayon))
     rotate(-90deg);
 }
 .categories .categories-item4 {
-  transform: translate(-50%, -50%) rotate(135deg) translate(var(--rayon))
-    rotate(-135deg);
+  transform: translate(-50%, -50%) rotate(140deg) translate(var(--rayon))
+    rotate(-140deg);
 }
 .categories .categories-item5 {
   transform: translate(-50%, -50%) rotate(180deg) translate(var(--rayon))
     rotate(-180deg);
 }
 .categories .categories-item6 {
-  transform: translate(-50%, -50%) rotate(225deg) translate(var(--rayon))
-    rotate(-225deg);
+  transform: translate(-50%, -50%) rotate(220deg) translate(var(--rayon))
+    rotate(-220deg);
 }
 .categories .categories-item7 {
   transform: translate(-50%, -50%) rotate(270deg) translate(var(--rayon))
     rotate(-270deg);
 }
 .categories .categories-item8 {
-  transform: translate(-50%, -50%) rotate(315deg) translate(var(--rayon))
-    rotate(-315deg);
+  transform: translate(-50%, -50%) rotate(320deg) translate(var(--rayon))
+    rotate(-320deg);
 }
 
 .categories .categories-center {
   z-index: 2;
+}
+
+.categories .categories-center {
+  width: var(--centerSize);
+  height: var(--centerSize);
+}
+.categories .categories-center img,
+.categories .categories-center .inner {
+  border-radius: 50%;
 }
