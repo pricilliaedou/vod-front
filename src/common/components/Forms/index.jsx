@@ -10,11 +10,7 @@ import {
   Stack,
   Button,
 } from "@mui/material";
-
-// import { useTheme } from "@mui/material/styles";
 import "./index.css";
-
-// import Button from "../Button";
 
 const Forms = () => {
   const [name, setName] = useState("");
@@ -22,8 +18,6 @@ const Forms = () => {
   const [message, setMessage] = useState("");
   const [titre, setTitre] = useState("");
   const [error, setError] = useState({});
-
-  // const theme = useTheme();
 
   const validate = () => {
     const newError = {};
@@ -135,7 +129,7 @@ const Forms = () => {
           error={Boolean(error.message)}
         />
       </div>
-      <div className="forms-button">
+      <div>
         <Stack spacing={2} direction="row">
           <Button variant="contained" color="secondary" onClick={handleSubmit}>
             Envoyer

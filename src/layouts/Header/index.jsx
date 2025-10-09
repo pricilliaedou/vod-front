@@ -1,6 +1,6 @@
 import logo from "../../assets/logos/logo.png";
 import SearchBar from "../../components/SearchBar";
-import Button from "../../common/components/Button";
+import { Stack, Button } from "@mui/material";
 import "./index.css";
 
 const Header = () => {
@@ -10,7 +10,11 @@ const Header = () => {
         <img src={logo} alt="logo" />
       </div>
       <SearchBar />
-      <Button className="button-header">S'identifier</Button>
+      <Stack spacing={2} direction="row">
+        <Button variant="contained" color="secondary">
+          S'identifier
+        </Button>
+      </Stack>
     </div>
   );
 };

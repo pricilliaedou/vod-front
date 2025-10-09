@@ -47,3 +47,17 @@
   transition: all 0.2s;
   transition-delay: 0.1s;
 }
+
+@media (max-width: 767px) {
+  .contactContainer-form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contactContainer-left {
+    width: 100%;
+  }
+  .contactContainer-right {
+    width: 100%;
+  }
+}
