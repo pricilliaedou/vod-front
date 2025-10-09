@@ -64,6 +64,7 @@
 .categories .categories-cerveau {
   transform: translate(-50%, -50%) rotate(0deg) translate(var(--rayon))
     rotate(0deg);
+  position: relative;
 }
 .categories .categories-glossaire {
   transform: translate(-50%, -50%) rotate(40deg) translate(var(--rayon))
@@ -98,6 +99,27 @@
   z-index: 2;
 }
 
+.categories-text {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 3px 5px;
+  font-size: 0.6em;
+  border-radius: 5px;
+  max-width: 70%;
+  text-align: center;
+}
+.categories-text:hover {
+  cursor: pointer;
+  transform: translate(-50%, -50%) scale(1.05);
+  transition: all 0.3s ease;
+  scale: 1.05;
+  background-color: rgba(0, 0, 0, 0.9);
+}
 .categories .categories-center {
   width: var(--centerSize);
   height: var(--centerSize);
@@ -105,6 +127,7 @@
 .categories .categories-center img,
 .categories .categories-center .inner {
   border-radius: 50%;
+  object-position: 50% 50%;
 }
 
 @media (hover: none) {
