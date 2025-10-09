@@ -20,7 +20,7 @@ const Navbar = ({ activeTab = null }) => {
         Accueil
       </Link>
       <Link
-        to="/"
+        to="/videos"
         style={{
           backgroundColor: themeColors.orange.main,
           "--pulse-color": themeColors.orange.main,
@@ -31,7 +31,7 @@ const Navbar = ({ activeTab = null }) => {
         Vidéos
       </Link>
       <Link
-        to="/"
+        to="/videos"
         style={{
           backgroundColor: themeColors.yellow.main,
           "--pulse-color": themeColors.yellow.main,
@@ -44,7 +44,7 @@ const Navbar = ({ activeTab = null }) => {
         Témoignages
       </Link>
       <Link
-        to="/"
+        to="/contact"
         style={{
           backgroundColor: themeColors.teal.main,
           "--pulse-color": themeColors.teal.main,

@@ -1,0 +1,49 @@
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.contactContainer p {
+  margin-left: 10px;
+}
+.contactContainer-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+.contactContainer-left {
+  width: 60%;
+}
+
+.contactContainer-right {
+  border: 1px solid #000;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-direction: column;
+  width: 40%;
+  align-self: start;
+}
+
+.contactContainer-right-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.contactContainer-right-icons a {
+  padding: 5px;
+}
+
+.contactContainer-right-icons a:hover {
+  transform: scale(1.1);
+  transition: all 0.2s;
+  transition-delay: 0.1s;
+}

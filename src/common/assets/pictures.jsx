@@ -7,6 +7,7 @@ import cerveau from "../../assets/images/cerveau.webp";
 import sInformer from "../../assets/images/s-informer.webp";
 import solitude from "../../assets/images/solitude.webp";
 import glossaire from "../../assets/images/glossaire.webp";
+import impactRS from "../../assets/images/impact-rs.png";
 
 export const Cyberharcelement = ({ className = "" } = {}) => {
   return (
@@ -117,6 +118,19 @@ export const Sommeil = ({ className = "" } = {}) => {
       <img
         src={sommeil}
         alt="illustration de l'impact des écrans sur le sommeil"
+        loading="lazy"
+        className={className}
+      />
+    </>
+  );
+};
+
+export const ImpactRS = ({ className = "" } = {}) => {
+  return (
+    <>
+      <img
+        src={impactRS}
+        alt="illustration de l'impact des réseaux sociaux"
         loading="lazy"
         className={className}
       />

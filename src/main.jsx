@@ -1,7 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { ThemeProvider } from "@mui/material/styles";
 import "./index.css";
 import App from "./App.jsx";
+import theme from "./utils/theme.js";
 import * as Sentry from "@sentry/react";
 
 Sentry.init({
@@ -11,6 +13,8 @@ Sentry.init({
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </StrictMode>
 );
