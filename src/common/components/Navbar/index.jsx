@@ -1,59 +1,52 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { themeColors } from "../../../styles/themeColors";
 
 import "./index.css";
 
-const Navbar = ({ activeTab = null }) => {
-  const [currentActiveTab, setCurrentActiveTab] = useState(activeTab);
+const Navbar = () => {
   return (
     <div className="navbar">
-      <Link
+      <NavLink
         to="/"
         style={{
           backgroundColor: themeColors.violet.main,
           "--pulse-color": themeColors.violet.main,
         }}
-        className={`pulse ${currentActiveTab === "accueil" ? "active" : ""}`}
-        onClick={() => setCurrentActiveTab("accueil")}
+        end
+        className={({ isActive }) => `pulse ${isActive ? "active" : ""}`}
       >
         Accueil
-      </Link>
-      <Link
+      </NavLink>
+      <NavLink
         to="/videos"
         style={{
           backgroundColor: themeColors.orange.main,
           "--pulse-color": themeColors.orange.main,
         }}
-        className={`pulse ${currentActiveTab === "videos" ? "active" : ""}`}
-        onClick={() => setCurrentActiveTab("videos")}
+        className={({ isActive }) => `pulse ${isActive ? "active" : ""}`}
       >
         Vidéos
-      </Link>
-      <Link
-        to="/videos"
+      </NavLink>
+      <NavLink
+        to="/temoignages"
         style={{
           backgroundColor: themeColors.yellow.main,
           "--pulse-color": themeColors.yellow.main,
         }}
-        className={`pulse ${
-          currentActiveTab === "temoignages" ? "active" : ""
-        }`}
-        onClick={() => setCurrentActiveTab("temoignages")}
+        className={({ isActive }) => `pulse ${isActive ? "active" : ""}`}
       >
         Témoignages
-      </Link>
-      <Link
+      </NavLink>
+      <NavLink
         to="/contact"
         style={{
           backgroundColor: themeColors.teal.main,
           "--pulse-color": themeColors.teal.main,
         }}
-        className={`pulse ${currentActiveTab === "contact" ? "active" : ""}`}
-        onClick={() => setCurrentActiveTab("contact")}
+        className={({ isActive }) => `pulse ${isActive ? "active" : ""}`}
       >
         Contact
-      </Link>
+      </NavLink>
     </div>
   );
 };
