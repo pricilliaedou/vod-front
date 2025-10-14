@@ -1,6 +1,6 @@
 import logo from "../../assets/logos/logo.png";
 import SearchBar from "../../components/SearchBar";
-import { Stack, Button } from "@mui/material";
+import { Box, Stack, Button } from "@mui/material";
 import "./index.css";
 
 const Header = () => {
@@ -10,11 +10,23 @@ const Header = () => {
         <img src={logo} alt="logo" />
       </div>
       <SearchBar />
-      <Stack spacing={2} direction="row">
-        <Button variant="contained" color="secondary">
-          S'identifier
-        </Button>
-      </Stack>
+      <Box
+        component="form"
+        sx={{
+          "& .MuiButton-root": {
+            margin: "10px 0",
+            borderRadius: "10px",
+          },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <Stack spacing={2} direction="row">
+          <Button variant="contained" color="secondary">
+            S'identifier
+          </Button>
+        </Stack>
+      </Box>
     </div>
   );
 };

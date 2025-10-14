@@ -58,19 +58,21 @@ const Forms = () => {
       sx={{
         "& .MuiTextField-root": {
           m: 1,
-          width: "25ch",
+          width: { xs: "100%", sm: "25ch" },
           "& .MuiOutlinedInput-root": {
             borderRadius: "15px",
           },
         },
         "& .MuiFormControl-root": {
+          m: 1,
+          width: { xs: "100%", sm: "25ch" },
           "& .MuiOutlinedInput-root": {
             borderRadius: "15px",
           },
         },
         "& .MuiButton-root": {
           margin: "10px 0",
-          borderRadius: "15px",
+          borderRadius: "10px",
         },
       }}
       noValidate
@@ -90,7 +92,7 @@ const Forms = () => {
       <div>
         <TextField id="prenom" label="Prénom" />
       </div>
-      <FormControl sx={{ m: 1, width: "25ch" }}>
+      <FormControl sx={{ m: 1, width: { xs: "100%", sm: "25ch" } }}>
         <InputLabel id="demo-simple-select-label">Vous êtes ?</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -118,7 +120,7 @@ const Forms = () => {
       </div>
       <div>
         <TextField
-          sx={{ m: 1, minWidth: 400, maxWidth: 450 }}
+          sx={{ m: 1, width: "100%" }}
           id="message"
           label="Message"
           multiline
