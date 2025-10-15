@@ -1,8 +1,12 @@
+import OtherLayout from "../../layouts/OtherLayout";
+
 const Temoignages = () => {
   return (
-    <div>
-      <h1>Temoignages</h1>
-    </div>
+    <OtherLayout>
+      <div>
+        <h1>Temoignages</h1>
+      </div>
+    </OtherLayout>
   );
 };
 

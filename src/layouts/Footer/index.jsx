@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { themeColors } from "../../styles/themeColors";
 import {
   LinkedinIcon,
@@ -95,12 +96,13 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p
+        <Link
+          to="/contact"
           className="footer-contact"
           style={{ backgroundColor: themeColors.violet.light }}
         >
           Nous contacter
-        </p>
+        </Link>
         <p
           className="footer-contact"
           style={{ backgroundColor: themeColors.yellow.main }}
