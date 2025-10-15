@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/logos/logo.png";
 import SearchBar from "../../components/SearchBar";
 import { Box, Stack, Button } from "@mui/material";
@@ -7,7 +8,9 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-logo">
-        <img src={logo} alt="logo" />
+        <Link to="/">
+          <img src={logo} alt="logo" />
+        </Link>
       </div>
       <SearchBar />
       <Box
@@ -22,9 +25,11 @@ const Header = () => {
         autoComplete="off"
       >
         <Stack spacing={2} direction="row">
-          <Button variant="contained" color="secondary">
-            S'identifier
-          </Button>
+          <Link to="/login">
+            <Button variant="contained" color="secondary">
+              S'identifier
+            </Button>
+          </Link>
         </Stack>
       </Box>
     </div>

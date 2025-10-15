@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Videos from "./pages/Videos";
 import Contact from "./pages/Contact";
 import Temoignages from "./pages/Temoignages";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/videos" element={<Videos />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/temoignages" element={<Temoignages />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>
