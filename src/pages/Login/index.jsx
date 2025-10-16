@@ -1,11 +1,26 @@
 import { Link } from "react-router-dom";
-import { Box, TextField, Stack, Button } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Stack,
+  Button,
+  InputAdornment,
+  IconButton,
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useState } from "react";
 import Logo from "../../assets/logos/logo.png";
 import { LoginImage } from "../../common/assets/pictures";
 import { themeColors } from "../../styles/themeColors";
 import "./index.css";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div className="containerLogin">
       <div className="containerLogin-left">
@@ -44,24 +59,27 @@ const Login = () => {
             autoComplete="off"
           >
             <div className="containerLogin-right__input">
-              <TextField
-                id="email"
-                label="Email"
-                variant="outlined"
-
-                //   onChange={(e) => setEmail(e.target.value)}
-                //   helperText={error.email}
-                //   error={Boolean(error.email)}
-              />
+              <TextField id="email" label="Email" variant="outlined" />
             </div>
             <div className="containerLogin-right__input">
               <TextField
                 id="password"
                 label="Mot de passe"
+                type={showPassword ? "text" : "password"}
                 variant="outlined"
-                //   onChange={(e) => setPassword(e.target.value)}
-                //   helperText={error.password}
-                //   error={Boolean(error.password)}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
               />
             </div>
             <div>
@@ -70,9 +88,6 @@ const Login = () => {
                   variant="contained"
                   color="primary"
                   sx={{ color: "#ffffff" }}
-
-                  // onClick={handleSubmitAsync}
-                  // disabled={loading}
                 >
                   Je me connecte
                 </Button>
