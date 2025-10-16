@@ -8,6 +8,7 @@ import sInformer from "../../assets/images/s-informer.webp";
 import solitude from "../../assets/images/solitude.webp";
 import glossaire from "../../assets/images/glossaire.webp";
 import impactRS from "../../assets/images/impact-rs.png";
+import loginImage from "../../assets/images/login-img.webp";
 
 export const Cyberharcelement = ({ className = "" } = {}) => {
   return (
@@ -131,6 +132,19 @@ export const ImpactRS = ({ className = "" } = {}) => {
       <img
         src={impactRS}
         alt="illustration de l'impact des réseaux sociaux"
+        loading="lazy"
+        className={className}
+      />
+    </>
+  );
+};
+
+export const LoginImage = ({ className = "" } = {}) => {
+  return (
+    <>
+      <img
+        src={loginImage}
+        alt="illustration de la connexion"
         loading="lazy"
         className={className}
       />
