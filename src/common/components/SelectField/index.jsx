@@ -11,13 +11,21 @@ const SelectField = ({
   label,
   value,
   onChange,
-  option = [],
+  options = [],
   error,
   helperText,
   FormControlProps = {},
 }) => {
   return (
-    <FormControl {...FormControlProps} error={Boolean(error)}>
+    <FormControl
+      {...FormControlProps}
+      error={Boolean(error)}
+      sx={{
+        "& .MuiOutlinedInput-root": {
+          borderRadius: "15px",
+        },
+      }}
+    >
       <InputLabel id={`${id}-label`}>{label}</InputLabel>
       <Select
         labelId={`${id}-label`}
@@ -26,7 +34,7 @@ const SelectField = ({
         label={label}
         onChange={onChange}
       >
-        {option.map((item) => (
+        {options.map((item) => (
           <MenuItem key={item.value} value={item.value}>
             {item.label}
           </MenuItem>

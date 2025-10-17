@@ -1,0 +1,23 @@
+.SignupContainer {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.SignupContainer h2 {
+  margin-bottom: 50px;
+}
+.SignupContainer__input {
+  margin-bottom: 20px;
+}
+
+.SignupContainer p {
+  margin-top: 30px;
+  font-size: 0.95em;
+}
+
+.SignupContainer .MuiFormControl-root {
+  width: 100% !important;
+  margin-left: 0 !important;
+}

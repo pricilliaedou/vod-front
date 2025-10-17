@@ -1,40 +1,46 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Stack, Button } from "@mui/material";
 import AuthLayout from "../../layouts/AuthLayout";
-import { validateValues } from "../../utils/validation.js";
 import UserFormFields from "../../common/components/UserFormFields";
-import { themeColors } from "../../styles/themeColors";
+import { validateValues } from "../../utils/validation";
 import "./index.css";
 
-const Login = () => {
+const Signup = () => {
   const [values, setValues] = useState({
+    lastName: "",
+    firstName: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
   const [errors, setErrors] = useState({});
-
   const onChange = (k) => (e) =>
-    setValues({ ...validateValues, [k]: e.target.value });
+    setValues((v) => ({ ...v, [k]: e.target.value }));
 
   const submit = (e) => {
     e.preventDefault();
-    const eObj = validateValues(values);
+    const eObj = validateValues(values, "signup");
     setErrors(eObj);
     if (Object.keys(eObj).length) return;
   };
 
   return (
     <AuthLayout>
-      <div className="LoginContainer">
-        <h2>Se connecter</h2>
+      <div className="SignupContainer">
+        <h2>S'inscrire</h2>
         <form onSubmit={submit}>
-          <div className="LoginContainer__input">
+          <div className="SignupContainer__input">
             <UserFormFields
               values={values}
               errors={errors}
               onChange={onChange}
-              fields={["email", "password"]}
+              fields={[
+                "lastName",
+                "firstName",
+                "email",
+                "password",
+                "confirmPassword",
+              ]}
             />
           </div>
 
@@ -45,21 +51,14 @@ const Login = () => {
                 color="primary"
                 sx={{ color: "#ffffff" }}
               >
-                Je me connecte
+                S'inscrire
               </Button>
             </Stack>
           </div>
         </form>
-        <p>
-          Vous êtes nouveau ?
-          <Link to="/signup" style={{ color: themeColors.violet.main }}>
-            {" "}
-            S'inscrire
-          </Link>
-        </p>
       </div>
     </AuthLayout>
   );
 };
 
-export default Login;
+export default Signup;

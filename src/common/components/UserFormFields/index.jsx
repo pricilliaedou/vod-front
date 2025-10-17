@@ -15,14 +15,22 @@ const UserFormFields = ({
   return (
     <Box
       sx={{
+        display: "flex",
+        flexDirection: "column",
         "& .MuiTextField-root": {
           m: 1,
           width: { xs: "100%", sm: "25ch" },
           "& .MuiOutlinedInput-root": { borderRadius: "15px" },
         },
-        "& .MuiFormControl-root": { m: 1, width: { xs: "100%", sm: "25ch" } },
+        "& .MuiFormControl-root": {
+          m: 1,
+          width: { xs: "100%", sm: "25ch" },
+          "& .MuiOutlinedInput-root": { borderRadius: "15px" },
+        },
         ...sx,
       }}
+      noValidate
+      autoComplete="off"
     >
       {fields.includes("lastName") && (
         <InputField
@@ -70,6 +78,7 @@ const UserFormFields = ({
           label="Vous êtes ?"
           value={values.role || ""}
           onChange={(e) => onChange("role")(e)}
+          error={errors.role}
           options={
             selectOptions.role || [
               { value: "particulier", label: "Particulier" },
