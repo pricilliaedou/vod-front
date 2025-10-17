@@ -1,61 +1,22 @@
-.containerLogin {
-  display: flex;
-  max-width: 1200px;
-  justify-content: space-between;
-  margin: 0 auto;
-  height: 100vh;
-}
-
-.containerLogin-left {
-  flex: 1;
-}
-
-.containerLogin-left img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  display: block;
-}
-
-.containerLogin-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.containerLogin-right img {
-  margin: 50px;
-}
-
-.containerLogin-right h2 {
+.LoginContainer h2 {
   margin-bottom: 50px;
 }
-.containerLogin-right__input {
+.LoginContainer__input {
   margin-bottom: 20px;
 }
 
-.containerLogin-right p {
+.LoginContainer p {
   margin-top: 30px;
   font-size: 0.95em;
 }
-.containerLogin-right__contain {
+.LoginContainer {
   width: 70%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 
-.containerLogin-right__contain .MuiFormControl-root {
+.LoginContainer .MuiFormControl-root {
   width: 100% !important;
   margin-left: 0 !important;
-}
-
-@media (max-width: 767px) {
-  .containerLogin-left {
-    display: none;
-  }
-  .containerLogin-right {
-    width: 100%;
-  }
 }
