@@ -23,6 +23,12 @@ const PasswordField = ({
       error={Boolean(error)}
       helperText={error ? helperText || error : undefined}
       variant="outlined"
+      sx={{
+        "& .MuiInputLabel-root": {
+          fontSize: "0.875rem",
+        },
+        ...TextFieldProps.sx,
+      }}
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">

@@ -14,12 +14,11 @@ const Login = () => {
   });
   const [errors, setErrors] = useState({});
 
-  const onChange = (k) => (e) =>
-    setValues({ ...validateValues, [k]: e.target.value });
+  const onChange = (k) => (e) => setValues({ ...values, [k]: e.target.value });
 
   const submit = (e) => {
     e.preventDefault();
-    const eObj = validateValues(values);
+    const eObj = validateValues(values, "login");
     setErrors(eObj);
     if (Object.keys(eObj).length) return;
   };
@@ -41,9 +40,11 @@ const Login = () => {
           <div>
             <Stack spacing={2} direction="row">
               <Button
+                type="submit"
                 variant="contained"
                 color="primary"
                 sx={{ color: "#ffffff" }}
+                onClick={submit}
               >
                 Je me connecte
               </Button>

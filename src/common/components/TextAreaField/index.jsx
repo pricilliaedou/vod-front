@@ -21,7 +21,13 @@ const TextAreaField = ({
       error={Boolean(error)}
       helperText={error ? helperText || error : undefined}
       variant="outlined"
-      sx={{ width: "100%" }}
+      sx={{
+        width: "100%",
+        "& .MuiInputLabel-root": {
+          fontSize: "0.875rem",
+        },
+        ...TextFieldProps.sx,
+      }}
       {...TextFieldProps}
     />
   );

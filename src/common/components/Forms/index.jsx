@@ -50,7 +50,12 @@ const Forms = () => {
       />
       <div>
         <Stack spacing={2} direction="row">
-          <Button variant="contained" color="secondary">
+          <Button
+            type="submit"
+            variant="contained"
+            color="secondary"
+            onClick={submit}
+          >
             Envoyer
           </Button>
         </Stack>

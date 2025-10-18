@@ -20,6 +20,12 @@ const InputField = ({
       error={Boolean(error)}
       helperText={error ? helperText || error : undefined}
       variant="outlined"
+      sx={{
+        "& .MuiInputLabel-root": {
+          fontSize: "0.875rem",
+        },
+        ...TextFieldProps.sx,
+      }}
       {...TextFieldProps}
     />
   );

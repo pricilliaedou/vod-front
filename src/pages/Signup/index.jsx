@@ -49,7 +49,9 @@ const Signup = () => {
               <Button
                 variant="contained"
                 color="primary"
+                type="submit"
                 sx={{ color: "#ffffff" }}
+                onClick={submit}
               >
                 S'inscrire
               </Button>

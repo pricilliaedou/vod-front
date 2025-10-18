@@ -24,6 +24,10 @@ const SelectField = ({
         "& .MuiOutlinedInput-root": {
           borderRadius: "15px",
         },
+        "& .MuiInputLabel-root": {
+          fontSize: "0.875rem",
+        },
+        ...FormControlProps.sx,
       }}
     >
       <InputLabel id={`${id}-label`}>{label}</InputLabel>
