@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import * as Sentry from "@sentry/react";
 import { Stack, Button } from "@mui/material";
 import AuthLayout from "../../layouts/AuthLayout";
 import { validateValues } from "../../utils/validation.js";
@@ -14,13 +16,44 @@ const Login = () => {
   });
   const [errors, setErrors] = useState({});
 
+  const navigate = useNavigate();
+
   const onChange = (k) => (e) => setValues({ ...values, [k]: e.target.value });
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     const eObj = validateValues(values, "login");
     setErrors(eObj);
     if (Object.keys(eObj).length) return;
+
+    const apiUrl = import.meta.env.VITE_API_URL;
+
+    try {
+      const response = await axios.post(`${apiUrl}/public/login`, {
+        username: values.email,
+        password: values.password,
+      });
+
+      if (response.status === 200 || response.status === 201) {
+        const { token, user } = response.data;
+        localStorage.setItem("authToken", token);
+        localStorage.setItem("user", JSON.stringify(user));
+        navigate("/");
+      } else {
+        const msg =
+          response?.data?.message || "Adresse email ou mot de passe incorrect";
+        setErrors({
+          form: msg,
+        });
+      }
+    } catch (error) {
+      Sentry.captureException(error);
+      console.error("Erreur lors de la connexion", error);
+
+      setErrors({
+        form: "Adresse email ou mot de passe incorrect",
+      });
+    }
   };
 
   return (
@@ -31,12 +64,15 @@ const Login = () => {
           <div className="LoginContainer__input">
             <UserFormFields
               values={values}
-              errors={errors}
+              errors={{}}
+              // errors={errors.form ? { email: true, password: true } : {}}
               onChange={onChange}
               fields={["email", "password"]}
             />
           </div>
-
+          {errors.form && (
+            <p className="LoginContainer__error-message">{errors.form}</p>
+          )}
           <div>
             <Stack spacing={2} direction="row">
               <Button
@@ -54,7 +90,6 @@ const Login = () => {
         <p>
           Vous êtes nouveau ?
           <Link to="/signup" style={{ color: themeColors.violet.main }}>
-            {" "}
             S'inscrire
           </Link>
         </p>

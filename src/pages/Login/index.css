@@ -20,3 +20,9 @@
   width: 100% !important;
   margin-left: 0 !important;
 }
+
+.LoginContainer__error-message {
+  /* color: #d32f2f; */
+  color: red;
+  margin-bottom: 15px;
+}
