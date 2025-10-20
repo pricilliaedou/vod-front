@@ -10,12 +10,15 @@ const AuthProvider = ({ children }) => {
     const u = localStorage.getItem("user");
     if (t) {
       setToken(t);
-      if (u) {
+      if (u && u !== "undefined" && u !== "null") {
         try {
           setUser(JSON.parse(u));
         } catch (e) {
           console.error("AuthContext: user JSON parse failed:", e);
+          localStorage.removeItem("user");
         }
+      } else {
+        localStorage.removeItem("user");
       }
     }
   }, []);
