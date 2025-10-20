@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation, Navigate } from "react-router-dom";
 import axios from "axios";
 import * as Sentry from "@sentry/react";
+import { useAuth } from "../../hooks/useAuth";
 import { Stack, Button } from "@mui/material";
 import AuthLayout from "../../layouts/AuthLayout";
 import { validateValues } from "../../utils/validation.js";
@@ -17,6 +18,10 @@ const Login = () => {
   const [errors, setErrors] = useState({});
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const { login, isAuthenticated } = useAuth();
+
+  if (isAuthenticated) return <Navigate to="/" replace />;
 
   const onChange = (k) => (e) => setValues({ ...values, [k]: e.target.value });
 
@@ -36,14 +41,15 @@ const Login = () => {
 
       if (response.status === 200 || response.status === 201) {
         const { token, user } = response.data;
-        localStorage.setItem("authToken", token);
-        localStorage.setItem("user", JSON.stringify(user));
-        navigate("/");
+        login(token, user);
+
+        const from = location.state?.from?.pathname || "/";
+        navigate(from, { replace: true });
       } else {
-        const msg =
-          response?.data?.message || "Adresse email ou mot de passe incorrect";
         setErrors({
-          form: msg,
+          form:
+            response?.data?.message ||
+            "Adresse email ou mot de passe incorrect",
         });
       }
     } catch (error) {
@@ -90,7 +96,7 @@ const Login = () => {
         <p>
           Vous êtes nouveau ?
           <Link to="/signup" style={{ color: themeColors.violet.main }}>
-            S'inscrire
+            &nbsp;S'inscrire
           </Link>
         </p>
       </div>

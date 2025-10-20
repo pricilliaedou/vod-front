@@ -1,7 +1,17 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import axios from "axios";
-import { Stack, Button } from "@mui/material";
+import {
+  Stack,
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+} from "@mui/material";
+// eslint-disable-next-line no-unused-vars
+import { AnimatePresence, motion } from "framer-motion";
+import { useAuth } from "../../hooks/useAuth";
 import AuthLayout from "../../layouts/AuthLayout";
 import UserFormFields from "../../common/components/UserFormFields";
 import { validateValues } from "../../utils/validation";
@@ -18,8 +28,11 @@ const Signup = () => {
     confirmPassword: "",
   });
   const [errors, setErrors] = useState({});
+  const [openSuccess, setOpenSuccess] = useState(false);
 
   const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
+  if (isAuthenticated) return <Navigate to="/" replace />;
 
   const onChange = (k) => (e) =>
     setValues((v) => ({ ...v, [k]: e.target.value }));
@@ -43,8 +56,7 @@ const Signup = () => {
       });
 
       if (response.status === 200 || response.status === 201) {
-        alert("Inscription réussie ! Vous pouvez maintenant vous connecter.");
-        navigate("/login");
+        setOpenSuccess(true);
       } else {
         setErrors({
           email: response.data.message,
@@ -68,6 +80,10 @@ const Signup = () => {
         });
       }
     }
+  };
+
+  const goToLogin = () => {
+    navigate("/login", { replace: true });
   };
 
   return (
@@ -105,6 +121,105 @@ const Signup = () => {
           </div>
         </form>
       </div>
+
+      <AnimatePresence>
+        {openSuccess && (
+          <Dialog
+            open={openSuccess}
+            onClose={() => navigate("/", { replace: true })}
+            aria-labelledby="signup-success-title"
+            fullWidth
+            maxWidth="xs"
+            BackdropProps={{
+              sx: {
+                backgroundColor: "rgba(0,0,0,0.6)",
+                backdropFilter: "blur(2px)",
+              },
+            }}
+            PaperProps={{
+              sx: {
+                borderRadius: 3,
+                overflow: "hidden",
+                p: 1,
+              },
+            }}
+          >
+            <DialogTitle id="signup-success-title">
+              Inscription réussie
+            </DialogTitle>
+            <DialogContent dividers>
+              <div
+                style={{
+                  display: "grid",
+                  placeItems: "center",
+                  margin: "12px 0",
+                }}
+              >
+                <motion.svg
+                  width="120"
+                  height="120"
+                  viewBox="0 0 120 120"
+                  initial="hidden"
+                  animate="visible"
+                >
+                  <motion.circle
+                    cx="60"
+                    cy="60"
+                    r="48"
+                    fill="none"
+                    stroke="#2e7d32"
+                    strokeWidth="6"
+                    variants={{
+                      hidden: { pathLength: 0 },
+                      visible: {
+                        pathLength: 1,
+                        transition: { duration: 0.7, ease: "easeOut" },
+                      },
+                    }}
+                  />
+                  <motion.path
+                    d="M40 62 L55 76 L82 46"
+                    fill="none"
+                    stroke="#2e7d32"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="8"
+                    variants={{
+                      hidden: { pathLength: 0, opacity: 0 },
+                      visible: {
+                        pathLength: 1,
+                        opacity: 1,
+                        transition: {
+                          delay: 0.45,
+                          duration: 0.5,
+                          ease: "easeOut",
+                        },
+                      },
+                    }}
+                  />
+                </motion.svg>
+                <motion.p
+                  style={{ marginTop: 8, textAlign: "center" }}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  Votre compte a bien été créé. Vous pouvez maintenant vous
+                  connecter.
+                </motion.p>
+              </div>
+            </DialogContent>
+            <DialogActions sx={{ justifyContent: "center", gap: 1 }}>
+              <Button onClick={() => navigate("/", { replace: true })}>
+                Plus tard
+              </Button>
+              <Button variant="contained" onClick={goToLogin}>
+                Se connecter
+              </Button>
+            </DialogActions>
+          </Dialog>
+        )}
+      </AnimatePresence>
     </AuthLayout>
   );
 };
