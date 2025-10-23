@@ -9,6 +9,8 @@ import solitude from "../../assets/images/solitude.webp";
 import glossaire from "../../assets/images/glossaire.webp";
 import impactRS from "../../assets/images/impact-rs.png";
 import loginImage from "../../assets/images/login-img.webp";
+import cloud from "../../assets/images/cloud.png";
+import bubbles from "../../assets/images/bubbles.webp";
 
 export const Cyberharcelement = ({ className = "" } = {}) => {
   return (
@@ -145,6 +147,32 @@ export const LoginImage = ({ className = "" } = {}) => {
       <img
         src={loginImage}
         alt="illustration de la connexion"
+        loading="lazy"
+        className={className}
+      />
+    </>
+  );
+};
+
+export const Cloud = ({ className = "" } = {}) => {
+  return (
+    <>
+      <img
+        src={cloud}
+        alt="image d'un nuage"
+        loading="lazy"
+        className={className}
+      />
+    </>
+  );
+};
+
+export const Bubbles = ({ className = "" } = {}) => {
+  return (
+    <>
+      <img
+        src={bubbles}
+        alt="image d'un coeur d'une étoiles et d'un hashtag. Eléments décoratifs de la page d'accueil."
         loading="lazy"
         className={className}
       />

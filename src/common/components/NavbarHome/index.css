@@ -1,0 +1,81 @@
+.navHome {
+  position: relative;
+  width: 220px;
+  height: 360px;
+  user-select: none;
+}
+
+.navHome-poleWrap {
+  position: absolute;
+  inset: 0 0 0 0;
+  display: grid;
+  place-items: center;
+}
+
+.navHome-pole {
+  width: 60px;
+  height: 330px;
+}
+
+.navHome-sign {
+  position: absolute;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 145px;
+  padding: 10px 18px;
+  border-radius: 18px;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.12));
+  transform: translateX(-50%) rotate(var(--rot, 0deg));
+}
+
+.navHome-sign:hover {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  transform: translateX(-50%) scale(1.05) rotate(var(--rot, 0deg));
+}
+
+.navHome-cloud {
+  position: absolute;
+  width: 54px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.navHome-cloud--left {
+  left: -8px;
+  top: 80px;
+}
+.navHome-cloud--right {
+  right: -30px;
+  top: 146px;
+}
+.navHome-cloud--right-2 {
+  top: -5px;
+}
+.navHome-bubbles {
+  position: absolute;
+  right: -10px;
+  top: -60px;
+  width: 84px;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .navHome {
+    width: 190px;
+    height: 340px;
+  }
+  .navHome-sign {
+    min-width: 130px;
+    padding: 9px 16px;
+  }
+  .navHome-pole {
+    height: 310px;
+  }
+}

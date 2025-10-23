@@ -10,7 +10,7 @@ import Forms from "../../common/components/Forms";
 
 const Contact = () => {
   return (
-    <MainLayout>
+    <MainLayout className="contactLayout">
       <div className="contactContainer">
         <p>Besoin de réponses?</p>
         <p>Contactez-nous !</p>

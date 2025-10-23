@@ -125,8 +125,8 @@ export const EmailIcon = ({ color = "none", size = 48, ...props }) => {
 export const BarHomeIcon = () => {
   return (
     <svg
-      width="142"
-      height="486"
+      width="60"
+      height="350"
       viewBox="0 0 142 486"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

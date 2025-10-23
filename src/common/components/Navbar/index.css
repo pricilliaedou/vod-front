@@ -10,7 +10,7 @@
 
 .navbar a {
   padding: 10px 10px 20px 10px;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   transition: all 0.3s ease;
   position: relative;
   font-size: 0.9em;
@@ -33,5 +33,29 @@
     width: 100%;
     justify-content: space-between;
     flex-shrink: 1;
+    gap: 5px;
+    padding: 0 10px;
+  }
+
+  .navbar a {
+    padding: 8px 6px 16px 6px;
+    font-size: 0.7em;
+    white-space: nowrap;
+    flex: 1;
+    text-align: center;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    gap: 3px;
+    padding: 0 5px;
+    top: -25px;
+  }
+
+  .navbar a {
+    padding: 6px 4px 14px 4px;
+    font-size: 0.65em;
   }
 }

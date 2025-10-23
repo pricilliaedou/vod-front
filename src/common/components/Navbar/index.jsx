@@ -3,9 +3,9 @@ import { themeColors } from "../../../styles/themeColors";
 
 import "./index.css";
 
-const Navbar = () => {
+const Navbar = ({ className }) => {
   return (
-    <div className="navbar">
+    <div className={`navbar ${className}`}>
       <NavLink
         to="/"
         style={{
@@ -13,7 +13,9 @@ const Navbar = () => {
           "--pulse-color": themeColors.violet.main,
         }}
         end
-        className={({ isActive }) => `pulse ${isActive ? "active" : ""}`}
+        className={({ isActive }) =>
+          `pulse ${isActive ? "active" : ""} ${className ? className : ""}`
+        }
       >
         Accueil
       </NavLink>
@@ -23,7 +25,9 @@ const Navbar = () => {
           backgroundColor: themeColors.orange.main,
           "--pulse-color": themeColors.orange.main,
         }}
-        className={({ isActive }) => `pulse ${isActive ? "active" : ""}`}
+        className={({ isActive }) =>
+          `pulse ${isActive ? "active" : ""} ${className ? className : ""}`
+        }
       >
         Vidéos
       </NavLink>
@@ -33,7 +37,9 @@ const Navbar = () => {
           backgroundColor: themeColors.yellow.main,
           "--pulse-color": themeColors.yellow.main,
         }}
-        className={({ isActive }) => `pulse ${isActive ? "active" : ""}`}
+        className={({ isActive }) =>
+          `pulse ${isActive ? "active" : ""} ${className ? className : ""}`
+        }
       >
         Témoignages
       </NavLink>
@@ -43,7 +49,9 @@ const Navbar = () => {
           backgroundColor: themeColors.teal.main,
           "--pulse-color": themeColors.teal.main,
         }}
-        className={({ isActive }) => `pulse ${isActive ? "active" : ""}`}
+        className={({ isActive }) =>
+          `pulse ${isActive ? "active" : ""} ${className ? className : ""}`
+        }
       >
         Contact
       </NavLink>

@@ -49,6 +49,9 @@
 }
 
 @media (max-width: 767px) {
+  .contactLayout {
+    width: 90%;
+  }
   .contactContainer-form {
     flex-direction: column;
     justify-content: center;
