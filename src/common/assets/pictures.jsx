@@ -1,3 +1,5 @@
+import homeImg from "../../assets/images/img-home.png";
+import videoImg from "../../assets/images/impact-rs.png";
 import cyberharcelement from "../../assets/images/cyberharcelement.webp";
 import prevention from "../../assets/images/prevention.webp";
 import sommeil from "../../assets/images/sommeil.webp";
@@ -187,6 +189,32 @@ export const Error404Img = ({ className = "" } = {}) => {
       <img
         src={error404}
         alt="image d'un canard utilisant un ordinateur"
+        loading="lazy"
+        className={className}
+      />
+    </>
+  );
+};
+
+export const HomeImg = ({ className = "" } = {}) => {
+  return (
+    <>
+      <img
+        src={homeImg}
+        alt="image d'une maison"
+        loading="lazy"
+        className={className}
+      />
+    </>
+  );
+};
+
+export const VideoImg = ({ className = "" } = {}) => {
+  return (
+    <>
+      <img
+        src={videoImg}
+        alt="image d'un ordinateur"
         loading="lazy"
         className={className}
       />

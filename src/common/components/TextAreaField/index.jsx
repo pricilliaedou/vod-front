@@ -13,6 +13,7 @@ const TextAreaField = ({
   return (
     <TextField
       id={id}
+      name={id}
       label={label}
       multiline
       value={value}

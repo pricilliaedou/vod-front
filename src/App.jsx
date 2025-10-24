@@ -5,6 +5,7 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import Home from "./pages/Home";
 import Videos from "./pages/Videos";
 import Contact from "./pages/Contact";
+import Succes from "./pages/Succes";
 import Temoignages from "./pages/Temoignages";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
 
           <Route path="/contact" element={<Contact />} />
+          <Route path="/succes" element={<Succes />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

@@ -57,7 +57,7 @@ const Home = () => {
               </div>
               <div className="homeLayout-secondSection">
                 <p>S'informer selon ses besoins</p>
-                <Categories />
+                <Categories isAuthenticated={isAuthenticated} />
               </div>
             </div>
           </BodyLayout>
@@ -80,7 +80,7 @@ const Home = () => {
               </div>
               <div className="homeLayout-secondSection">
                 <p>S'informer selon ses besoins</p>
-                <Categories />
+                <Categories isAuthenticated={isAuthenticated} />
               </div>
             </div>
           </BodyLayout>

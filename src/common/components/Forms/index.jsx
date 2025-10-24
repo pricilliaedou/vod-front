@@ -21,14 +21,35 @@ const Forms = () => {
     setValues((v) => ({ ...v, [k]: e.target.value }));
 
   const submit = (e) => {
-    e.preventDefault();
     const eObj = validateValues(values, "contact");
     setErrors(eObj);
-    if (Object.keys(eObj).length) return;
+    if (Object.keys(eObj).length) {
+      e.preventDefault();
+      return;
+    }
+    // Si pas d'erreurs, le formulaire sera soumis par Netlify
+    // Pas de e.preventDefault() pour permettre la soumission native
   };
 
   return (
-    <form onSubmit={submit}>
+    <form
+      onSubmit={submit}
+      action="/succes"
+      name="contact-reunies"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
+      {/* Champ caché requis par Netlify */}
+      <input type="hidden" name="form-name" value="contact-reunies" />
+
+      {/* Champ honeypot pour éviter le spam (caché visuellement) */}
+      <p hidden>
+        <label>
+          Ne pas remplir si vous êtes humain: <input name="bot-field" />
+        </label>
+      </p>
+
       <UserFormFields
         values={values}
         errors={errors}

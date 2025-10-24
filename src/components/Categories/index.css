@@ -66,33 +66,25 @@
     rotate(0deg);
   position: relative;
 }
-.categories .categories-glossaire {
-  transform: translate(-50%, -50%) rotate(40deg) translate(var(--rayon))
-    rotate(-40deg);
-}
 .categories .categories-cyberharcelement {
-  transform: translate(-50%, -50%) rotate(90deg) translate(var(--rayon))
-    rotate(-90deg);
+  transform: translate(-50%, -50%) rotate(60deg) translate(var(--rayon))
+    rotate(-60deg);
 }
 .categories .categories-solitude {
-  transform: translate(-50%, -50%) rotate(140deg) translate(var(--rayon))
-    rotate(-140deg);
+  transform: translate(-50%, -50%) rotate(120deg) translate(var(--rayon))
+    rotate(-120deg);
 }
-.categories .categories-sinformer {
+.categories .categories-sommeil {
   transform: translate(-50%, -50%) rotate(180deg) translate(var(--rayon))
     rotate(-180deg);
 }
-.categories .categories-sommeil {
-  transform: translate(-50%, -50%) rotate(220deg) translate(var(--rayon))
-    rotate(-220deg);
-}
 .categories .categories-RS {
-  transform: translate(-50%, -50%) rotate(270deg) translate(var(--rayon))
-    rotate(-270deg);
+  transform: translate(-50%, -50%) rotate(240deg) translate(var(--rayon))
+    rotate(-240deg);
 }
 .categories .categories-jeuxVideos {
-  transform: translate(-50%, -50%) rotate(320deg) translate(var(--rayon))
-    rotate(-320deg);
+  transform: translate(-50%, -50%) rotate(300deg) translate(var(--rayon))
+    rotate(-300deg);
 }
 
 .categories .categories-center {

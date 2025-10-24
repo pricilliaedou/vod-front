@@ -13,6 +13,7 @@ const InputField = ({
   return (
     <TextField
       id={id}
+      name={id}
       label={label}
       value={value}
       onChange={onChange}

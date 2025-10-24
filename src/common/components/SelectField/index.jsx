@@ -34,6 +34,7 @@ const SelectField = ({
       <Select
         labelId={`${id}-label`}
         id={id}
+        name={id}
         value={value}
         label={label}
         onChange={onChange}
