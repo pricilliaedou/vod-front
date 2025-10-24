@@ -42,7 +42,7 @@ export default function VideoCarousel({ videos = [] }) {
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
-        height: { xs: 400, sm: 410, md: 450 },
+        height: { xs: 440, sm: 445, md: 450 },
         // borderRadius: 4,
         borderRadius: { xs: 0, sm: 4, md: 4 },
         overflow: "visible",
@@ -71,7 +71,6 @@ export default function VideoCarousel({ videos = [] }) {
         />
       </IconButton>
 
-      {/* vidéo actuelle */}
       <Box
         sx={{
           width: "100%",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, ButtonBase, Typography, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import { themeColors } from "../../../styles/themeColors";
@@ -30,9 +30,14 @@ const item = {
   },
 };
 
-export default function AgeGroup({ onChange }) {
-  const [active, setActive] = useState("2-6");
+export default function AgeGroup({ onChange, selectedAge = null }) {
+  const [active, setActive] = useState(selectedAge);
   const theme = useTheme();
+
+  // Synchroniser l'état externe avec l'état interne
+  useEffect(() => {
+    setActive(selectedAge);
+  }, [selectedAge]);
 
   const handleSelect = (key) => {
     setActive(key);
@@ -99,7 +104,7 @@ export default function AgeGroup({ onChange }) {
                 transition: "all .22s ease",
               }}
             >
-              <motion.div
+              <Box
                 sx={{
                   width: 14,
                   height: 14,
@@ -108,6 +113,7 @@ export default function AgeGroup({ onChange }) {
                   mr: 1.4,
                   flexShrink: 0,
                   opacity: selected ? 1 : 0,
+                  transition: "opacity 0.2s ease",
                 }}
                 aria-hidden
               />
