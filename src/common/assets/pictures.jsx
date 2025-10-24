@@ -11,6 +11,7 @@ import impactRS from "../../assets/images/impact-rs.png";
 import loginImage from "../../assets/images/login-img.webp";
 import cloud from "../../assets/images/cloud.png";
 import bubbles from "../../assets/images/bubbles.webp";
+import error404 from "../../assets/images/error404.webp";
 
 export const Cyberharcelement = ({ className = "" } = {}) => {
   return (
@@ -173,6 +174,19 @@ export const Bubbles = ({ className = "" } = {}) => {
       <img
         src={bubbles}
         alt="image d'un coeur d'une étoiles et d'un hashtag. Eléments décoratifs de la page d'accueil."
+        loading="lazy"
+        className={className}
+      />
+    </>
+  );
+};
+
+export const Error404Img = ({ className = "" } = {}) => {
+  return (
+    <>
+      <img
+        src={error404}
+        alt="image d'un canard utilisant un ordinateur"
         loading="lazy"
         className={className}
       />

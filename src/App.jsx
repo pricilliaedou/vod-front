@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Temoignages from "./pages/Temoignages";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Error404 from "./pages/Error404";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
