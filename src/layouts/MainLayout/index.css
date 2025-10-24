@@ -18,5 +18,12 @@
 @media (max-width: 767px) {
   .mainLayout {
     width: 100%;
+    margin: 60px auto 20px;
+  }
+  .mainLayout-items {
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 8px;
+    gap: 0;
   }
 }

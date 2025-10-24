@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import OtherLayout from "../../layouts/OtherLayout";
-import { Box, Stack, Typography, Chip, Grid, Skeleton } from "@mui/material";
+import { Box, Stack, Typography, Chip, Skeleton } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import VideoSection from "../../common/components/VideoSection";
 import VideoPlayerDialog from "../../common/components/VideoPlayerDialog";
@@ -34,7 +34,7 @@ export default function Videos() {
       const { data } = await axios.get(
         `${apiUrl}/public/videos/by-category${q}`
       );
-      // 🔒 ne garde QUE les catégories non vides
+      //  ne garde QUE les catégories non vides
       const filtered = (Array.isArray(data) ? data : []).filter(
         (b) => b.videos && b.videos.length > 0
       );
@@ -59,12 +59,19 @@ export default function Videos() {
     <OtherLayout onAgeChange={setAge} selectedAge={age}>
       <Box sx={{ px: { xs: 1, sm: 2 }, py: { xs: 1, sm: 2 } }}>
         <Stack
-          direction="row"
-          alignItems="center"
+          direction={{ xs: "column", sm: "row" }}
+          alignItems={{ xs: "flex-start", sm: "center" }}
           justifyContent="space-between"
-          sx={{ mb: 1 }}
+          spacing={{ xs: 1, sm: 0 }}
+          sx={{ mb: 2 }}
         >
-          <Typography variant="h6" sx={{ fontWeight: 800 }}>
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: 800,
+              fontSize: { xs: "1.1rem", sm: "1.25rem" },
+            }}
+          >
             Vidéos par catégories
           </Typography>
           <Chip
@@ -89,9 +96,28 @@ export default function Videos() {
         )}
 
         {loading && !err && (
-          <Grid container spacing={2}>
-            {Array.from({ length: 8 }).map((_, i) => (
-              <Grid key={i} item xs={12} sm={6} md={4} lg={3} xl={2}>
+          <Box
+            sx={{
+              display: "flex",
+              gap: 2,
+              overflowX: "auto",
+              scrollbarWidth: "none",
+              "&::-webkit-scrollbar": { display: "none" },
+              pb: 1,
+            }}
+          >
+            {Array.from({ length: 6 }).map((_, i) => (
+              <Box
+                key={i}
+                sx={{
+                  minWidth: {
+                    xs: "85%",
+                    sm: "calc(50% - 8px)",
+                    md: "calc(33.333% - 11px)",
+                    lg: "calc(25% - 12px)",
+                  },
+                }}
+              >
                 <Skeleton
                   variant="rounded"
                   height={180}
@@ -99,14 +125,14 @@ export default function Videos() {
                 />
                 <Skeleton variant="text" />
                 <Skeleton variant="text" width="60%" />
-              </Grid>
+              </Box>
             ))}
-          </Grid>
+          </Box>
         )}
 
         {!loading && !err && (
           <AnimatePresence initial={false}>
-            <Stack spacing={3}>
+            <Stack spacing={{ xs: 3, sm: 3 }}>
               {blocks.map((b) => (
                 <VideoSection
                   key={b.category}

@@ -1,6 +1,18 @@
 .otherLayout-left {
-  width: 25%;
+  width: 26%;
 }
 .otherLayout-right {
-  width: 75%;
+  width: 74%;
+  flex: 1;
+}
+
+@media (max-width: 767px) {
+  .otherLayout-left {
+    width: 100%;
+    min-width: auto;
+    margin-bottom: 16px;
+  }
+  .otherLayout-right {
+    width: 100%;
+  }
 }

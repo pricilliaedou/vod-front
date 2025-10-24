@@ -45,10 +45,15 @@ export default function AgeGroup({ onChange, selectedAge = null }) {
   };
 
   return (
-    <Box sx={{ width: "100%", maxWidth: 360 }}>
+    <Box sx={{ width: "100%" }}>
       <Typography
         variant="subtitle1"
-        sx={{ fontWeight: 800, letterSpacing: 0.3, mb: 1 }}
+        sx={{
+          fontWeight: 800,
+          letterSpacing: 0.3,
+          mb: 1,
+          display: { xs: "none", sm: "block" },
+        }}
       >
         Par âges
       </Typography>
@@ -60,16 +65,18 @@ export default function AgeGroup({ onChange, selectedAge = null }) {
         sx={{
           position: "relative",
           display: "flex",
-          flexDirection: "column",
-          gap: 1.2,
-          p: 1.5,
-          borderRadius: 3,
+          flexDirection: { xs: "row", sm: "column" },
+          flexWrap: { xs: "wrap", sm: "nowrap" },
+          gap: { xs: 1, sm: 1.2 },
+          p: { xs: 1, sm: 1.5 },
+          borderRadius: { xs: 2, sm: 3 },
           boxShadow: "0 4px 14px rgba(0,0,0,.12)",
           bgcolor:
             theme.palette.mode === "light"
               ? "rgba(255,255,255,.7)"
               : "rgba(255,255,255,.08)",
           backdropFilter: "blur(6px)",
+          maxWidth: { xs: "100%", sm: 360 },
         }}
       >
         {groups.map((g) => {
@@ -78,20 +85,21 @@ export default function AgeGroup({ onChange, selectedAge = null }) {
             <MotionButton
               key={g.key}
               variants={item}
-              whileHover={{ scale: 1.03, x: 4 }}
+              whileHover={{ scale: 1.03, x: { xs: 0, sm: 4 } }}
               whileTap={{ scale: 0.97 }}
               onClick={() => handleSelect(g.key)}
               aria-pressed={selected}
               sx={{
-                justifyContent: "flex-start",
+                justifyContent: { xs: "center", sm: "flex-start" },
                 alignItems: "center",
                 flexDirection: "row",
                 display: "flex",
-                px: 2,
-                py: 1.15,
-                borderRadius: 2,
+                px: { xs: 1.5, sm: 2 },
+                py: { xs: 0.8, sm: 1.15 },
+                borderRadius: { xs: 8, sm: 2 },
                 whiteSpace: "nowrap",
                 position: "relative",
+                flex: { xs: "0 1 auto", sm: "initial" },
                 background: selected
                   ? "rgba(255,255,255,0.9)"
                   : "rgba(255,255,255,0.55)",
@@ -106,21 +114,22 @@ export default function AgeGroup({ onChange, selectedAge = null }) {
             >
               <Box
                 sx={{
-                  width: 14,
-                  height: 14,
+                  width: { xs: 10, sm: 14 },
+                  height: { xs: 10, sm: 14 },
                   borderRadius: "50%",
                   bgcolor: g.color,
-                  mr: 1.4,
+                  mr: { xs: 0.8, sm: 1.4 },
                   flexShrink: 0,
                   opacity: selected ? 1 : 0,
                   transition: "opacity 0.2s ease",
+                  display: { xs: selected ? "block" : "none", sm: "block" },
                 }}
                 aria-hidden
               />
               <Typography
                 sx={{
                   fontWeight: 800,
-                  fontSize: "0.95rem",
+                  fontSize: { xs: "0.8rem", sm: "0.95rem" },
                   color: selected ? "text.primary" : "text.secondary",
                   lineHeight: 1.2,
                 }}
