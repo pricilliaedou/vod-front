@@ -1,4 +1,5 @@
 import MainLayout from "../../layouts/MainLayout";
+import Forms from "../../common/components/Forms";
 import {
   LinkedinIcon,
   GithubIcon,
@@ -6,7 +7,6 @@ import {
   EmailIcon,
 } from "../../common/assets/icons";
 import "./index.css";
-import Forms from "../../common/components/Forms";
 
 const Contact = () => {
   return (

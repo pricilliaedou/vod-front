@@ -1,17 +1,15 @@
 import MainLayout from "../MainLayout";
 import AgeGroup from "../../common/components/AgeGroup";
-import { ImpactRS } from "../../common/assets/pictures";
+
 import "./index.css";
 
-const OtherLayout = () => {
+const OtherLayout = ({ children, onAgeChange }) => {
   return (
     <MainLayout>
       <div className="otherLayout-left">
-        <AgeGroup />
+        <AgeGroup onChange={onAgeChange} />
       </div>
-      <div className="otherLayout-right">
-        <ImpactRS />
-      </div>
+      <div className="otherLayout-right">{children}</div>
     </MainLayout>
   );
 };

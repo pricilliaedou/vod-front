@@ -79,9 +79,13 @@ export default function AgeGroup({ onChange }) {
               aria-pressed={selected}
               sx={{
                 justifyContent: "flex-start",
+                alignItems: "center",
+                flexDirection: "row",
+                display: "flex",
                 px: 2,
                 py: 1.15,
                 borderRadius: 2,
+                whiteSpace: "nowrap",
                 position: "relative",
                 background: selected
                   ? "rgba(255,255,255,0.9)"
@@ -95,7 +99,7 @@ export default function AgeGroup({ onChange }) {
                 transition: "all .22s ease",
               }}
             >
-              <Box
+              <motion.div
                 sx={{
                   width: 14,
                   height: 14,
@@ -112,6 +116,7 @@ export default function AgeGroup({ onChange }) {
                   fontWeight: 800,
                   fontSize: "0.95rem",
                   color: selected ? "text.primary" : "text.secondary",
+                  lineHeight: 1.2,
                 }}
               >
                 {g.label}
