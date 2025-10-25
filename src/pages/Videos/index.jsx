@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import api from "../../utils/axiosClient";
 import OtherLayout from "../../layouts/OtherLayout";
 import { Box, Stack, Typography, Chip, Skeleton } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import VideoSection from "../../common/components/VideoSection";
 import VideoPlayerDialog from "../../common/components/VideoPlayerDialog";
-
-const apiUrl = import.meta.env.VITE_API_URL;
 
 export default function Videos() {
   const [age, setAge] = useState(null);
@@ -31,8 +29,8 @@ export default function Videos() {
     setErr("");
     try {
       const q = ageRange ? `?ageRange=${encodeURIComponent(ageRange)}` : "";
-      const { data } = await axios.get(
-        `${apiUrl}/public/videos/by-category${q}`
+      const { data } = await api.get(
+        `${import.meta.env.VITE_API_URL}/public/videos/by-category${q}`
       );
       //  ne garde QUE les catégories non vides
       const filtered = (Array.isArray(data) ? data : []).filter(

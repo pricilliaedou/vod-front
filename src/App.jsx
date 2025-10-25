@@ -9,6 +9,7 @@ import Succes from "./pages/Succes";
 import Temoignages from "./pages/Temoignages";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Profil from "./pages/Profil";
 import Error404 from "./pages/Error404";
 
 function App() {
@@ -39,6 +40,8 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route path="/profil" element={<Profil />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>

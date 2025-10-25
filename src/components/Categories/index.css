@@ -1,7 +1,10 @@
 .categories {
-  --diamètre: clamp(60vmin, 68vmin, 90vmin);
-  --sizeX: calc(var(--diamètre) * 0.27);
-  --sizeY: calc(var(--diamètre) * 0.21);
+  /* --diamètre: clamp(60vmin, 68vmin, 90vmin); */
+  --diamètre: clamp(70vmin, 90vmin, 98vmin);
+  /* --sizeX: calc(var(--diamètre) * 0.27);
+  --sizeY: calc(var(--diamètre) * 0.21); */
+  --sizeX: calc(var(--diamètre) * 0.3);
+  --sizeY: calc(var(--diamètre) * 0.27);
   --centerSize: calc(var(--diamètre) * 0.33);
   --R: calc(var(--diamètre) / 2);
   --rayon: calc(var(--R) - max(var(--sizeX), var(--sizeY)) / 2);

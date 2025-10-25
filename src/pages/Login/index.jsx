@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate, useLocation, Navigate } from "react-router-dom";
-import axios from "axios";
+import api from "../../utils/axiosClient";
 import * as Sentry from "@sentry/react";
 import { useAuth } from "../../hooks/useAuth";
 import { Stack, Button } from "@mui/material";
@@ -31,13 +31,14 @@ const Login = () => {
     setErrors(eObj);
     if (Object.keys(eObj).length) return;
 
-    const apiUrl = import.meta.env.VITE_API_URL;
-
     try {
-      const response = await axios.post(`${apiUrl}/public/login`, {
-        username: values.email,
-        password: values.password,
-      });
+      const response = await api.post(
+        `${import.meta.env.VITE_API_URL}/public/login`,
+        {
+          username: values.email,
+          password: values.password,
+        }
+      );
 
       if (response.status === 200 || response.status === 201) {
         const { token, user } = response.data;

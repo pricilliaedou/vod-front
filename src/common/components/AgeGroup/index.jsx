@@ -7,10 +7,10 @@ const MotionBox = motion(Box);
 const MotionButton = motion(ButtonBase);
 
 const groups = [
-  { key: "2-6", label: "2 – 6 ans", color: themeColors.teal.main },
-  { key: "7-10", label: "7 – 10 ans", color: themeColors.violet.main },
-  { key: "11-13", label: "11 – 13 ans", color: themeColors.orange.main },
-  { key: "14-17", label: "14 – 17 ans", color: themeColors.yellow.main },
+  { key: "2-6", label: "2 – 6 ans", color: themeColors.violet.main },
+  { key: "7-10", label: "7 – 10 ans", color: themeColors.orange.main },
+  { key: "11-13", label: "11 – 13 ans", color: themeColors.yellow.main },
+  { key: "14-17", label: "14 – 17 ans", color: themeColors.teal.main },
   { key: "18+", label: "18 ans et +", color: themeColors.violet.dark },
 ];
 

@@ -15,7 +15,6 @@ import {
 import LogoutIcon from "@mui/icons-material/Logout";
 import PersonIcon from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useAuth } from "../../hooks/useAuth";
 import logo from "../../assets/logos/logo.png";
 import SearchBar from "../../components/SearchBar";
@@ -130,19 +129,14 @@ const Header = () => {
                 transformOrigin={{ horizontal: "right", vertical: "top" }}
                 anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
               >
-                <MenuItem onClick={() => go("/")}>
+                <MenuItem onClick={() => go("/profil")}>
                   {/* <MenuItem onClick={()=>go("/account")}> */}
                   <ListItemIcon>
                     <PersonIcon fontSize="small" />
                   </ListItemIcon>
                   Mes informations
                 </MenuItem>
-                <MenuItem onClick={() => console.log("favorites")}>
-                  <ListItemIcon>
-                    <FavoriteBorderIcon fontSize="small" />
-                  </ListItemIcon>
-                  Mes favoris
-                </MenuItem>
+
                 <MenuItem onClick={() => console.log("settings")}>
                   <ListItemIcon>
                     <SettingsIcon fontSize="small" />

@@ -11,7 +11,7 @@ import {
 import "./index.css";
 
 const Categories = ({ isAuthenticated = false }) => {
-  const linkPath = isAuthenticated ? "/videos" : "/";
+  const linkPath = isAuthenticated ? "/videos" : "/login";
 
   return (
     <div className="categories">

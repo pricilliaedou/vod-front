@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
-import axios from "axios";
+import api from "../../utils/axiosClient";
 import {
   Stack,
   Button,
@@ -37,8 +37,6 @@ const Signup = () => {
   const onChange = (k) => (e) =>
     setValues((v) => ({ ...v, [k]: e.target.value }));
 
-  const apiUrl = import.meta.env.VITE_API_URL;
-
   const submit = async (e) => {
     e.preventDefault();
     const eObj = validateValues(values, "signup");
@@ -46,14 +44,17 @@ const Signup = () => {
     if (Object.keys(eObj).length) return;
 
     try {
-      const response = await axios.post(`${apiUrl}/public/subscribe`, {
-        firstName: values.firstName,
-        lastName: values.lastName,
-        email: values.email,
-        password: values.password,
-        confirmPassword: values.confirmPassword,
-        phone: "",
-      });
+      const response = await api.post(
+        `${import.meta.env.VITE_API_URL}/public/subscribe`,
+        {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          password: values.password,
+          confirmPassword: values.confirmPassword,
+          phone: "",
+        }
+      );
 
       if (response.status === 200 || response.status === 201) {
         setOpenSuccess(true);

@@ -1,6 +1,7 @@
 import { Dialog, Box, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { youtubeEmbed } from "../../../utils/youtube";
+// import Comments from "../Comments";
 
 export default function VideoPlayerDialog({ open, url, onClose }) {
   const embed = url ? youtubeEmbed(url) : null;
@@ -56,6 +57,9 @@ export default function VideoPlayerDialog({ open, url, onClose }) {
             </Box>
           )}
         </Box>
+        {/* <Box sx={{ p: 2, color: "common.white", bgcolor: "black" }}>
+          <Comments videoUrl={url} />
+        </Box> */}
       </Box>
     </Dialog>
   );
