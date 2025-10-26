@@ -196,7 +196,10 @@ export default function VideoCard({ video, onClick }) {
                         scale: [1, 1.3, 1],
                         rotate: [0, -10, 10, 0],
                       }
-                    : {}
+                    : {
+                        scale: 1,
+                        rotate: 0,
+                      }
                 }
                 transition={{
                   duration: 0.4,
@@ -206,9 +209,9 @@ export default function VideoCard({ video, onClick }) {
                 <IconButton
                   size="small"
                   sx={{
-                    color: liked ? "#e91e63" : "inherit",
+                    color: liked ? "#A09EFD" : "inherit",
                     "&:hover": {
-                      color: liked ? "#c2185b" : "#e91e63",
+                      color: liked ? "#6B69E6" : "#A09EFD",
                     },
                   }}
                 >
@@ -222,7 +225,7 @@ export default function VideoCard({ video, onClick }) {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 0.5,
-                color: liked ? "#e91e63" : "text.secondary",
+                color: liked ? "#A09EFD" : "text.primary",
               }}
             >
               {likes}
@@ -243,7 +246,10 @@ export default function VideoCard({ video, onClick }) {
                       scale: [1, 1.2, 1],
                       y: [0, -5, 0],
                     }
-                  : {}
+                  : {
+                      scale: 1,
+                      y: 0,
+                    }
               }
               transition={{
                 duration: 0.3,
@@ -253,9 +259,9 @@ export default function VideoCard({ video, onClick }) {
               <IconButton
                 size="small"
                 sx={{
-                  color: favorite ? "#ff9800" : "inherit",
+                  color: favorite ? "#FF9979" : "inherit",
                   "&:hover": {
-                    color: favorite ? "#f57c00" : "#ff9800",
+                    color: favorite ? "#FF795C" : "#FF9979",
                   },
                 }}
               >

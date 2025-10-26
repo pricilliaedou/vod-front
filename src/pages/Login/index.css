@@ -8,6 +8,7 @@
 .LoginContainer p {
   margin-top: 30px;
   font-size: 0.95em;
+  white-space: nowrap;
 }
 .LoginContainer {
   width: 70%;

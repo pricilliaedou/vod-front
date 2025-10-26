@@ -21,7 +21,9 @@ const Categories = ({ isAuthenticated = false }) => {
       </a>
       <a href={linkPath} className="categories-cyberharcelement">
         <Cyberharcelement className="inner" />
-        <span className="categories-text">Cyberharcèlement</span>
+        <span className="categories-text" title="Cyberharcèlement">
+          Cyberharcèlement
+        </span>
       </a>
       <a href={linkPath} className="categories-solitude">
         <Solitude className="inner" />

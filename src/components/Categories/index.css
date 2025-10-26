@@ -107,6 +107,9 @@
   border-radius: 5px;
   max-width: 70%;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .categories-text:hover {
   cursor: pointer;

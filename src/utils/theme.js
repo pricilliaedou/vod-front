@@ -1,7 +1,17 @@
 import { createTheme } from "@mui/material/styles";
 const theme = createTheme({
   cssVariables: true,
+  typography: {
+    fontFamily: '"Montserrat", sans-serif',
+    allVariants: {
+      color: "#5b5b5b",
+    },
+  },
   palette: {
+    text: {
+      primary: "#5b5b5b",
+      secondary: "#5b5b5b",
+    },
     primary: {
       light: "#C9C8FF",
       main: "#A09EFD",

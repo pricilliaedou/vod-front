@@ -17,7 +17,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
 import { useAuth } from "../../hooks/useAuth";
 import logo from "../../assets/logos/logo.png";
-import SearchBar from "../../components/SearchBar";
+// import SearchBar from "../../components/SearchBar";
 import "./index.css";
 
 const getInitials = (user) => {
@@ -64,7 +64,7 @@ const Header = () => {
           <img src={logo} alt="logo" />
         </Link>
       </div>
-      <SearchBar />
+      {/* <SearchBar /> */}
       <Box
         component="form"
         sx={{
