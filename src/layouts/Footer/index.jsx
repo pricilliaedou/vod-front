@@ -5,10 +5,10 @@ import {
   GithubIcon,
   PortfolioIcon,
 } from "../../common/assets/icons";
-import MENESR from "../../assets/logos/MENESR.png";
-import secretariat from "../../assets/logos/secretariat-d-etat-charge-de-l-enfance.png";
-import UE_co_founded from "../../assets/logos/eu_co_funded_en.png";
-import fondation_des_hopitaux from "../../assets/logos/fondation-des-hopitaux.png";
+import eEnfance from "../../assets/logos/e-enfance.png";
+import droitEnfance from "../../assets/logos/droitdenfance.png";
+import unaf from "../../assets/logos/unaf.webp";
+import internetsanscrainte from "../../assets/logos/internetsanscrainte.png";
 import "./index.css";
 
 const Footer = () => {
@@ -21,13 +21,13 @@ const Footer = () => {
         <div className="footer-logo-left">
           <div className="footer-logo-img">
             <a
-              href="https://www.education.gouv.fr/"
+              href="https://e-enfance.org/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                src={MENESR}
-                alt="Logo du ministère de l'éducation nationale"
+                src={eEnfance}
+                alt="Logo de l'association e-enfance. Association qui protège les enfants et les ados des dangers d'internet."
               />
             </a>
           </div>
@@ -35,11 +35,11 @@ const Footer = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://solidarites.gouv.fr/protection-de-lenfance-1"
+              href="https://www.droitdenfance.org/"
             >
               <img
-                src={secretariat}
-                alt="Logo du sécrétariat d'état chargé de l'enfance"
+                src={droitEnfance}
+                alt="Logo de la fondation droit d'enfance."
               />
             </a>
           </div>
@@ -49,9 +49,12 @@ const Footer = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://ec.europa.eu/regional_policy/information-sources/logo-download-center_en"
+              href="https://www.unaf.fr/"
             >
-              <img src={UE_co_founded} alt="Logo UE_co_founded" />
+              <img
+                src={unaf}
+                alt="Logo de l'association UNAF. Association qui protège les enfants et les ados des dangers d'internet."
+              />
             </a>
           </div>
           <div className="footer-logo-img">
@@ -61,7 +64,7 @@ const Footer = () => {
               href="https://don.fondationhopitaux.fr/?affectations=fondationhop%2F%3Futm_campaign%3Dfilrougenomentite&utm_source=google&utm_medium=cpc&utm_outil=motscles&gad_source=1&gclid=Cj0KCQjww5u2BhDeARIsALBuLnMdF06PWXgZqy3lHocIfuKle4XGfqeqiDaKX0TkLCeCEMypOlr9hpUaAvpFEALw_wcB"
             >
               <img
-                src={fondation_des_hopitaux}
+                src={internetsanscrainte}
                 alt="Logo de la fondation des hopitaux"
               />
             </a>
