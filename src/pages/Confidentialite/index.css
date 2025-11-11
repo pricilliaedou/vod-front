@@ -1,0 +1,28 @@
+.confidentialite {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.confidentialite h1 {
+  margin: 0 0 6px 0;
+}
+
+.confidentialite h2 {
+  margin: 16px 0 6px 0;
+}
+
+.confidentialite p {
+  margin: 0;
+}
+
+.confidentialite ul {
+  margin: 0 0 0 18px;
+}
+
+.confidentialite li {
+  margin: 4px 0;
+}

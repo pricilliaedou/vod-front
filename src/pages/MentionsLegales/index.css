@@ -1,0 +1,28 @@
+.legalPage {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.legalPage h1 {
+  margin: 0 0 6px 0;
+}
+
+.legalPage h2 {
+  margin: 16px 0 6px 0;
+}
+
+.legalPage p {
+  margin: 0;
+}
+
+.legalPage ul {
+  margin: 0 0 0 18px;
+}
+
+.legalPage li {
+  margin: 4px 0;
+}

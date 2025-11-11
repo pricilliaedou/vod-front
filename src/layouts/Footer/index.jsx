@@ -113,18 +113,20 @@ const Footer = () => {
         >
           Glossaire
         </Link>
-        <p
+        <Link
+          to="/mentions-legales"
           className="footer-contact"
           style={{ backgroundColor: themeColors.violet.light }}
         >
-          Espace presse
-        </p>
-        <p
+          Mentions légales
+        </Link>
+        <Link
+          to="/confidentialite"
           className="footer-contact"
           style={{ backgroundColor: themeColors.yellow.main }}
         >
-          Recevoir la newsletter
-        </p>
+          Politique de confidentialité
+        </Link>
       </div>
     </div>
   );

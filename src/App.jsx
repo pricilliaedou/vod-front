@@ -12,6 +12,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Profil from "./pages/Profil";
 import Error404 from "./pages/Error404";
+import MentionsLegales from "./pages/MentionsLegales";
+import Confidentialite from "./pages/Confidentialite";
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
 
           <Route path="/profil" element={<Profil />} />
           <Route path="/glossaire" element={<Glossaire />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/confidentialite" element={<Confidentialite />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
