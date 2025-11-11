@@ -10,6 +10,7 @@ Le routage est défini dans `src/App.jsx` avec `react-router-dom`.
 - `/login` → Login (publique)
 - `/signup` → Signup (publique)
 - `/profil` → Profil (publique)
+- `/glossaire` → Glossaire (publique)
 - `/videos` → Videos (protégée)
 - `/temoignages` → Temoignages (protégée)
 - `*` → Error404

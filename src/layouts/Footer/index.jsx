@@ -106,12 +106,13 @@ const Footer = () => {
         >
           Nous contacter
         </Link>
-        <p
+        <Link
+          to="/glossaire"
           className="footer-contact"
           style={{ backgroundColor: themeColors.yellow.main }}
         >
-          Demander une intervention
-        </p>
+          Glossaire
+        </Link>
         <p
           className="footer-contact"
           style={{ backgroundColor: themeColors.violet.light }}

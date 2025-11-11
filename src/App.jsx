@@ -5,6 +5,7 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import Home from "./pages/Home";
 import Videos from "./pages/Videos";
 import Contact from "./pages/Contact";
+import Glossaire from "./pages/Glossaire";
 import Succes from "./pages/Succes";
 import Temoignages from "./pages/Temoignages";
 import Login from "./pages/Login";
@@ -42,6 +43,7 @@ function App() {
           />
 
           <Route path="/profil" element={<Profil />} />
+          <Route path="/glossaire" element={<Glossaire />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
