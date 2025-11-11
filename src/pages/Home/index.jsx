@@ -56,7 +56,35 @@ const Home = () => {
                 </div>
               </div>
               <div className="homeLayout-secondSection">
-                <p>S'informer selon ses besoins</p>
+                <h2>Pause Écran</h2>
+                <p>
+                  Pause Écran est un site de sensibilisation aux usages du
+                  numérique et des écrans, pensé pour les enfants et les
+                  parents. À travers des vidéos pédagogiques, il aborde
+                  différents thèmes liés aux dangers et dérives du numérique :
+                  <ul className="homeLayout-secondSection-list">
+                    <li>l&apos;impact des écrans sur le sommeil,</li>
+                    <li>l&apos;influence des réseaux sociaux,</li>
+                    <li>
+                      les risques d&apos;addiction et de dérive dans les jeux
+                      vidéo,
+                    </li>
+                    <li>la solitude et l&apos;isolement liés aux écrans,</li>
+                    <li>le cyberharcèlement,</li>
+                    <li>les effets des réseaux sur le cerveau,</li>
+                    <li>et des pistes de prévention et dialogue en famille.</li>
+                  </ul>
+                </p>
+                <p>
+                  <br />
+                  L&apos; objectif est d’aider les familles à mieux comprendre
+                  ces enjeux, à ouvrir la discussion et à développer une
+                  utilisation plus saine et équilibrée des écrans.
+                </p>
+                <br />
+                <h3 className="homeLayout-secondSection-categories-title">
+                  S'informer selon ses besoins
+                </h3>
                 <Categories isAuthenticated={isAuthenticated} />
               </div>
             </div>
@@ -79,7 +107,35 @@ const Home = () => {
                 </div>
               </div>
               <div className="homeLayout-secondSection">
-                <p>S'informer selon ses besoins</p>
+                <h2>Pause Écran</h2>
+                <p>
+                  Pause Écran est un site de sensibilisation aux usages du
+                  numérique et des écrans, pensé pour les enfants et les
+                  parents. À travers des vidéos pédagogiques, il aborde
+                  différents thèmes liés aux dangers et dérives du numérique :
+                  <ul className="homeLayout-secondSection-list">
+                    <li>l&apos;impact des écrans sur le sommeil,</li>
+                    <li>l&apos;influence des réseaux sociaux,</li>
+                    <li>
+                      les risques d&apos;addiction et de dérive dans les jeux
+                      vidéo,
+                    </li>
+                    <li>la solitude et l&apos;isolement liés aux écrans,</li>
+                    <li>le cyberharcèlement,</li>
+                    <li>les effets des réseaux sur le cerveau,</li>
+                    <li>et des pistes de prévention et dialogue en famille.</li>
+                  </ul>
+                </p>
+                <p>
+                  <br />
+                  L&apos; objectif est d’aider les familles à mieux comprendre
+                  ces enjeux, à ouvrir la discussion et à développer une
+                  utilisation plus saine et équilibrée des écrans.
+                </p>
+                <br />
+                <h3 className="homeLayout-secondSection-categories-title">
+                  S'informer selon ses besoins
+                </h3>
                 <Categories isAuthenticated={isAuthenticated} />
               </div>
             </div>

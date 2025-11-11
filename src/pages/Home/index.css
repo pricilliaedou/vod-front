@@ -54,6 +54,25 @@
   display: grid;
   padding: 2rem 1rem;
 }
+.homeLayout-secondSection h2 {
+  margin-bottom: 20px;
+}
+.homeLayout-secondSection p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.homeLayout-secondSection-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  list-style-position: inside;
+  margin-top: 10px;
+}
+
+.homeLayout-secondSection-categories-title {
+  font-weight: 600;
+  margin-top: 20px;
+}
 
 @media (max-width: 767px) {
   .homeLayout-left {
