@@ -51,7 +51,6 @@ const Signup = () => {
           lastName: values.lastName,
           email: values.email,
           password: values.password,
-          confirmPassword: values.confirmPassword,
           phone: "",
         }
       );
@@ -80,6 +79,9 @@ const Signup = () => {
             "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
         });
       }
+    } finally {
+      // Nettoyage des champs sensibles en mémoire
+      setValues((v) => ({ ...v, password: "", confirmPassword: "" }));
     }
   };
 

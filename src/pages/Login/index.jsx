@@ -42,7 +42,6 @@ const Login = () => {
 
       if (response.status === 200 || response.status === 201) {
         const { token, user } = response.data;
-        console.log("response.data in Login", response.data);
         login(token, user);
 
         const from = location.state?.from?.pathname || "/";
@@ -61,6 +60,9 @@ const Login = () => {
       setErrors({
         form: "Adresse email ou mot de passe incorrect",
       });
+    } finally {
+      // Nettoyage du mot de passe en mémoire
+      setValues((v) => ({ ...v, password: "" }));
     }
   };
 
